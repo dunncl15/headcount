@@ -1,10 +1,11 @@
 import DistrictRepository from '../../src/helper.js';
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
 
-describe.skip('DistrictRepository iteration 1 - part 1', () =>  {
+describe('DistrictRepository iteration 1 - part 1', () =>  {
   const district = new DistrictRepository(kinderData);
 
   test('findByName returns undefined if no arguments are provided', () => {
+
     expect(district.findByName()).toBe(undefined);
   });
 
@@ -15,12 +16,12 @@ describe.skip('DistrictRepository iteration 1 - part 1', () =>  {
   test('findByName returns an object with its individual district information', () => {
 
     expect(typeof district.findByName('Colorado')).toEqual('object');
-    expect(district.findByName('Colorado').location).toEqual('Colorado');
+    expect(district.findByName('Colorado').Location).toEqual('Colorado');
   });
 
-  test('findByName search is not case sensitive', () => {
-    expect(district.findByName('ColoRAdo').location).toEqual('Colorado');
-    expect(district.findByName('ACADEmY 20').location).toEqual('ACADEMY 20');
+  test.only('findByName search is not case sensitive', () => {
+    expect(district.findByName('ColoRAdo').Location).toEqual('Colorado');
+    expect(district.findByName('ACADEmY 20').Location).toEqual('ACADEMY 20');
   });
 
 // taylor --> what does this test actually look for?
