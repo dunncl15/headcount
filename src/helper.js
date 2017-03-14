@@ -4,6 +4,7 @@ export default class DistrictRepository {
   }
 
   removeDuplicates(data) {
+    this.sanitizeData(data);
     let mapped = data.map(obj => {
        obj.Location = obj.Location.toUpperCase();
        return obj;
@@ -25,27 +26,14 @@ export default class DistrictRepository {
   }
 
   findByName(name) {
-    // if (!name) {
-    //   return undefined;
-    // }
-    // const upperCaseName = name.toUpperCase();
-    // const keys = Object.keys(this.data);
-    //
-    // if (!keys.includes(upperCaseName)) {
-    //   return undefined;
-    // }
-    //
-    // const dataArray = this.data[upperCaseName].locationData;
-    //
-    //
-    // this.data[upperCaseName].data = this.sanitizeData(dataArray);
-
+    if (!name) {
+      return undefined;
+    }
     return this.data[name.toUpperCase()];
   }
 
   sanitizeData(data) {
     const sanitized = data.map(location => {
-
       typeof location.Data === 'string' ? location.Data = 0 : location.Data;
       return location;
     });
@@ -53,25 +41,26 @@ export default class DistrictRepository {
   }
 
   formatData(data) {
-
-    let tim = data.reduce((obj, val) => {
+    return data.reduce((obj, val) => {
       obj[val.TimeFrame] = val.Data
       return obj;
     }, {});
-    return tim
+  }
+
+  findAllMatches(location) {
+    const keys = Object.keys(this.data);
+    if (location === undefined) {
+      return this.data;
+    }
+    if (!keys.includes(location.toUpperCase())) {
+      return [];
+    }
+    const matches = this.data[location.toUpperCase()].locationData;
+    return matches;
   }
 
   roundData(number) {
-    return Math.round(number * 1000) / 1000
+    return Math.round(number * 1000) / 1000;
   }
 
 }
-
-
-
-
-
-
-
-
-
