@@ -1,8 +1,12 @@
 import React from 'react';
+import SchoolCard from '../SchoolCard/SchoolCard';
 
-const Main = () => {
+const Main = ({ data }) => {
+
   return (
-    <div>SUH</div>
+    <div>
+      <SchoolCard data={data} />
+    </div>
   )
 }
 

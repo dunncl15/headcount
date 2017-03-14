@@ -7,10 +7,17 @@ import Main                 from '../Main/Main';
 const district = new DistrictRepository(kinderData)
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      data: district.data
+    }
+  }
+
   render() {
     return (
       <div>Welcome To Headcount 2.0
-        <Main />
+        <Main data={this.state.data}/>
       </div>
     );
   }
