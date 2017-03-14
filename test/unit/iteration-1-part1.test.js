@@ -15,13 +15,11 @@ describe('DistrictRepository iteration 1 - part 1', () =>  {
 
   test('findByName returns an object with its individual district information', () => {
 
-
     expect(typeof district.findByName('Colorado')).toEqual('object');
     expect(district.findByName('Colorado').location).toEqual('COLORADO');
   });
 
   test('findByName search is not case sensitive', () => {
-
     expect(district.findByName('ColoRAdo').location).toEqual('COLORADO');
     expect(district.findByName('ACADEmY 20').location).toEqual('ACADEMY 20');
   });
@@ -34,61 +32,19 @@ describe('DistrictRepository iteration 1 - part 1', () =>  {
     expect(typeof academy.data).toBe('object');
   });
 
-  test('district data is rounded to the nearest hundredth', () => {
-    // const result = {"2004": 0.302, "2005": 0.267, "2006": 0.354, "2007": 0.392, "2008": 0.385, "2009": 0.39, "2010": 0.436, "2011": 0.489, "2012": 0.479, "2013": 0.488, "2014": 0.49}
-    const academy = district.findByName('ACADEmY 20');
+  test.only('district data is rounded to the nearest hundredth', () => {
+    const result = {"2004": 0.302, "2005": 0.267, "2006": 0.354, "2007": 0.392, "2008": 0.385, "2009": 0.39, "2010": 0.436, "2011": 0.489, "2012": 0.479, "2013": 0.488, "2014": 0.49 }
 
-    expect(academy.locationData.length).toEqual(11);
+    const academy = district.findByName('ACADEmY 20');
+    expect(academy.data).toEqual(result);
   });
 
   test('district data is sanitized and defaults to 0', () => {
     const academy = district.findByName('ARICKAREE R-2');
-    // const result = {"2004": 1, "2005": 0, "2006": 0.125, "2007": 0, "2008": 1, "2009": 1, "2010": 1, "2011": 1, "2012": 1, "2013": 1, "2014": 1}
+    const result = {"2004": 1, "2005": 0, "2006": 0.125, "2007": 0, "2008": 1, "2009": 1, "2010": 1, "2011": 1, "2012": 1, "2013": 1, "2014": 1}
 
-    expect(academy.locationData).toEqual([{ Location: 'ARICKAREE R-2',
-        TimeFrame: 2007,
-        DataFormat: 'Percent',
-        Data: 0 },
-      { Location: 'ARICKAREE R-2',
-        TimeFrame: 2006,
-        DataFormat: 'Percent',
-        Data: 0.125 },
-      { Location: 'ARICKAREE R-2',
-        TimeFrame: 2005,
-        DataFormat: 'Percent',
-        Data: 0 },
-      { Location: 'ARICKAREE R-2',
-        TimeFrame: 2004,
-        DataFormat: 'Percent',
-        Data: 1 },
-      { Location: 'ARICKAREE R-2',
-        TimeFrame: 2008,
-        DataFormat: 'Percent',
-        Data: 1 },
-      { Location: 'ARICKAREE R-2',
-        TimeFrame: 2009,
-        DataFormat: 'Percent',
-        Data: 1 },
-      { Location: 'ARICKAREE R-2',
-        TimeFrame: 2010,
-        DataFormat: 'Percent',
-        Data: 1 },
-      { Location: 'ARICKAREE R-2',
-        TimeFrame: 2011,
-        DataFormat: 'Percent',
-        Data: 1 },
-      { Location: 'ARICKAREE R-2',
-        TimeFrame: 2012,
-        DataFormat: 'Percent',
-        Data: 1 },
-      { Location: 'ARICKAREE R-2',
-        TimeFrame: 2013,
-        DataFormat: 'Percent',
-        Data: 1 },
-      { Location: 'ARICKAREE R-2',
-        TimeFrame: 2014,
-        DataFormat: 'Percent',
-        Data: 1 }])
+
+    expect(academy.data).toEqual(result)
   });
 
 });

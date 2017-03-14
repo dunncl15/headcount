@@ -21,33 +21,49 @@ export default class DistrictRepository {
   }
 
   findByName(name) {
-    if (!name) {
-      return undefined;
-    }
-    const upperCaseName = name.toUpperCase();
-    const keys = Object.keys(this.data);
-    if (!keys.includes(upperCaseName)) {
-      return undefined;
-    }
-    const dataArray = this.data[upperCaseName].locationData;
-    this.sanitizeData(dataArray);
+    // if (!name) {
+    //   return undefined;
+    // }
+    // const upperCaseName = name.toUpperCase();
+    // const keys = Object.keys(this.data);
+    //
+    // if (!keys.includes(upperCaseName)) {
+    //   return undefined;
+    // }
+    //
+    // const dataArray = this.data[upperCaseName].locationData;
+    //
+    //
+    // this.data[upperCaseName].data = this.sanitizeData(dataArray);
 
-    return this.data[upperCaseName];
+    return this.data[name.toUpperCase()];
   }
 
   sanitizeData(data) {
     const sanitized = data.map(location => {
-      typeof location.Data !== 'number' ? location.Data = 0 : location.Data;
+
+      typeof location.Data === 'string' ? location.Data = 0 : location.Data;
       return location;
     });
-    return this.formatData(sanitized);
+    return this.formatData(sanitized)
   }
 
   formatData(data) {
-    return data.reduce((obj, val) => {
+
+    let tim = data.reduce((obj, val) => {
       obj[val.TimeFrame] = val.Data
       return obj;
     }, {});
+    return tim
   }
 
 }
+
+
+
+
+
+
+
+
+
