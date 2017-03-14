@@ -12,10 +12,14 @@ export default class DistrictRepository {
       if (!acc[val.Location]) {
         acc[val.Location] = { locationData: [],
                               location: val.Location,
-                              data: this.sanitizeData(data)
+                              data: {[val.TimeFrame]: val.Data }
                             };
+      } else {
+        acc[val.Location].data[val.TimeFrame] = val.Data;
       }
+
       acc[val.Location].locationData.push(val);
+      
       return acc;
     }, {});
   }
