@@ -12,14 +12,14 @@ export default class DistrictRepository {
       if (!acc[val.Location]) {
         acc[val.Location] = { locationData: [],
                               location: val.Location,
-                              data: {[val.TimeFrame]: val.Data }
+                              data: {[val.TimeFrame]: this.roundData(val.Data) }
                             };
       } else {
-        acc[val.Location].data[val.TimeFrame] = val.Data;
+        acc[val.Location].data[val.TimeFrame] = this.roundData(val.Data);
       }
 
       acc[val.Location].locationData.push(val);
-      
+
       return acc;
     }, {});
   }
@@ -59,6 +59,10 @@ export default class DistrictRepository {
       return obj;
     }, {});
     return tim
+  }
+
+  roundData(number) {
+    return Math.round(number * 1000) / 1000
   }
 
 }
