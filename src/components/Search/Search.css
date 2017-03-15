@@ -1,0 +1,11 @@
+.search-field {
+  display: block;
+  width: 75%;
+  margin: 30px auto 0 auto;
+  padding: 10px 5px;
+  border-style: none;
+  border: 10px solid #333;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
