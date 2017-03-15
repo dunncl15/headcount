@@ -1,1 +1,18 @@
-/*APP COMPONENT RELATED CSS GOES HERE*/
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  padding: 0 2.5%;
+  background-color: #dfdbdb;
+}
+
+#root header {
+  padding: 20px 5px;
+}
+
+.app-title {
+  margin: 0;
+  text-align: center;
+}
