@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import './SchoolCard.css';
 
 const SchoolCard = ({ location, stats, onClick }) => {
