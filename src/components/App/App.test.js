@@ -4,7 +4,7 @@ import { shallow, mount } from 'enzyme';
 import { expect, assert } from 'chai';
 import App from './App';
 
-describe.skip('testing App component', () => {
+describe('testing App component', () => {
 
   it('App should render without crashing', () => {
     const div = document.createElement('div');
