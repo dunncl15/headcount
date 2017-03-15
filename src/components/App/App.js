@@ -12,7 +12,9 @@ class App extends Component {
     super()
     this.state = {
       data: district.data,
-      searchQuery: ''
+      searchQuery: '',
+      findByName: district.findByName,
+      cardsToCompare: []
     }
   }
 
@@ -23,7 +25,16 @@ class App extends Component {
   }
 
   clickDiv(e){
-    console.log(e.target);
+    const card = e.target;
+    card.classList.toggle('selected');
+    const title = card.querySelector('.county-name');
+    const titleVal = title.innerText;
+    const object = this.state.findByName(titleVal);
+    const temp = this.state.cardsToCompare;
+    temp.push(object);
+    this.setState({
+      cardsToCompare: temp
+    })
   }
 
   render() {
@@ -36,7 +47,7 @@ class App extends Component {
         <Main
           data={this.state.data}
           query={this.state.searchQuery}
-          onClick={ this.clickDiv.bind(this)}
+          onClick={this.clickDiv.bind(this)}
           />
       </section>
     );

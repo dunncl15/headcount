@@ -9,6 +9,10 @@
   border-radius: 5px;
 }
 
+.county-card.selected {
+  border: 3px solid blue;
+}
+
 .county-name {
   text-align: center;
   padding: 0 10px;
