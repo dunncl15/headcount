@@ -1,7 +1,7 @@
-import React from 'react';
-import './Main.css';
-import Search from '../Search/Search';
+import React      from 'react';
+import Search     from '../Search/Search';
 import SchoolCard from '../SchoolCard/SchoolCard';
+import './Main.css';
 
 const Main = ({ data, query, onClick }) => {
   const keys = Object.keys(data);

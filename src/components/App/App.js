@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
 import DistrictRepository   from '../../helper.js';
 import kinderData           from '../../../data/kindergartners_in_full_day_program.js';
 import Main                 from '../Main/Main';
 import Search               from '../Search/Search';
 import CompareCards         from '../CompareCards/CompareCards';
+import './App.css';
 
 const district = new DistrictRepository(kinderData)
 class App extends Component {
@@ -25,16 +25,22 @@ class App extends Component {
   }
 
   clickDiv(e){
-    const card = e.target;
-    card.classList.toggle('selected');
-    const title = card.querySelector('.county-name');
+    const card     = e.target;
+    const title    = card.querySelector('.county-name');
     const titleVal = title.innerText;
-    const object = this.state.findByName(titleVal);
-    const temp = this.state.cardsToCompare;
+    const object   = this.state.findByName(titleVal);
+    const temp     = this.state.cardsToCompare;
     temp.push(object);
-    this.setState({
-      cardsToCompare: temp
-    })
+
+    if(temp.length < 3) {
+      this.setState({
+        cardsToCompare: temp
+      })
+      card.classList.toggle('selected');
+    }
+    if(temp.includes(object)){
+      console.log('fdsfdsf');
+    }
   }
 
   render() {
