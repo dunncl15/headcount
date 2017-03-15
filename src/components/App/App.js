@@ -7,7 +7,6 @@ import Search               from '../Search/Search';
 import CompareCards         from '../CompareCards/CompareCards';
 
 const district = new DistrictRepository(kinderData)
-console.log(district);
 class App extends Component {
   constructor() {
     super()
@@ -15,6 +14,7 @@ class App extends Component {
       data: district.data,
       searchQuery: '',
       findByName: district.findByName,
+      cardsToCompare: []
     }
   }
 
@@ -25,6 +25,16 @@ class App extends Component {
   }
 
   clickDiv(e){
+    const card = e.target;
+    card.classList.toggle('selected');
+    const title = card.querySelector('.county-name');
+    const titleVal = title.innerText;
+    const object = this.state.findByName(titleVal);
+    const temp = this.state.cardsToCompare;
+    temp.push(object);
+    this.setState({
+      cardsToCompare: temp
+    })
   }
 
   render() {
@@ -39,7 +49,7 @@ class App extends Component {
         <Main
           data={this.state.data}
           query={this.state.searchQuery}
-          onClick={ this.clickDiv.bind(this)}
+          onClick={this.clickDiv.bind(this)}
           />
       </section>
     );
