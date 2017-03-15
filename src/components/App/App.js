@@ -16,9 +16,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>Welcome To Headcount 2.0
+      <section>
+        <header>
+          <h1 className="app-title">Welcome To Headcount 2.0</h1>
+        </header>  
         <Main data={this.state.data}/>
-      </div>
+      </section>
     );
   }
 }
