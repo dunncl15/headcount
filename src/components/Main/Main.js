@@ -1,11 +1,21 @@
 import React from 'react';
-import SchoolCard from '../SchoolCard/SchoolCard'
+import './Main.css';
+import Search from '../Search/Search';
+import SchoolCard from '../SchoolCard/SchoolCard';
 
-const Main=(props) => {
+const Main = ({ data, query }) => {
+  const keys = Object.keys(data);
+
   return (
-    <div>
-      <SchoolCard />
-    </div>
+      <section className="county-grid">
+      {keys.map((key, i) => {
+        if (key.includes(query.toUpperCase())) {
+          return (
+            <SchoolCard location={data[key].location} stats={data[key].data} key={i} />
+          )
+        }
+      })}
+      </section>
   )
 }
 
