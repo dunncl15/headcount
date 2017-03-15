@@ -7,7 +7,7 @@ const Main = ({ data, query }) => {
   const keys = Object.keys(data);
 
   return (
-      <section className="county-grid">
+    <section className="county-grid">
       {keys.map((key, i) => {
         if (key.includes(query.toUpperCase())) {
           return (
@@ -15,7 +15,7 @@ const Main = ({ data, query }) => {
           )
         }
       })}
-      </section>
+    </section>
   )
 }
 
