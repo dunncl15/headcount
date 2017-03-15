@@ -22,6 +22,10 @@ class App extends Component {
     });
   }
 
+  clickDiv(e){
+    console.log(e.target);
+  }
+
   render() {
     return (
       <section>
@@ -29,7 +33,11 @@ class App extends Component {
           <h1 className="app-title">Welcome To Headcount 2.0</h1>
           <Search onChange={this.handleChange.bind(this)} />
         </header>
-        <Main data={this.state.data} query={this.state.searchQuery}/>
+        <Main
+          data={this.state.data}
+          query={this.state.searchQuery}
+          onClick={ this.clickDiv.bind(this)}
+          />
       </section>
     );
   }
