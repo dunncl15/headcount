@@ -8,7 +8,7 @@ import Search               from '../Search/Search';
 const district = new DistrictRepository(kinderData)
 
 class App extends Component {
-  constructor() {
+  constructor(){
     super()
     this.state = {
       data: district.data,
