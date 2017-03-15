@@ -1,11 +1,11 @@
 import React from 'react';
 import './Search.css'
 
-const Search = (props) => {
+const Search = ({ onChange }) => {
   return (
     <input type="search"
            className="search-field"
-           onChange={(e) => props.onChange(e)}
+           onChange={(e) => onChange(e)}
            placeholder="Search by county"/>
   )
 }
