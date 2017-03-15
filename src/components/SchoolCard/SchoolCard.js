@@ -3,7 +3,7 @@ import React from 'react';
 const SchoolCard = (props) => {
   return (
     <div>
-    School
+      School
     </div>
   )
 }

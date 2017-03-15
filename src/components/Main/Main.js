@@ -1,11 +1,10 @@
 import React from 'react';
-import SchoolCard from '../SchoolCard/SchoolCard';
+import SchoolCard from '../SchoolCard/SchoolCard'
 
-const Main = ({ data }) => {
-
+const Main=(props) => {
   return (
     <div>
-      <SchoolCard data={data} />
+      <SchoolCard />
     </div>
   )
 }
