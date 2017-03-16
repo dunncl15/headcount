@@ -1,0 +1,7 @@
+.compare-cards {
+  display: flex;
+}
+
+.compare-cards > .county-card {
+  margin: 10px;
+}

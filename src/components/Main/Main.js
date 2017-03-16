@@ -31,10 +31,6 @@ class Main extends Component {
       })
       card.classList.toggle('selected');
     }
-
-    if(temp.includes(object)){
-
-    }
   }
 
   render() {
