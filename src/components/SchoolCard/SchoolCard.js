@@ -9,8 +9,8 @@ class SchoolCard extends Component {
     }
   }
 
-  render() {
-    const keys     = Object.keys(this.props.stats);
+  schoolCardMap = () => {
+    const keys     = Object.keys(this.props.stats)
     const location = this.props.location;
     const object   = this.props.stats;
 
@@ -30,10 +30,18 @@ class SchoolCard extends Component {
             return (
               <li
                 className="stat"
-                key={i}>{ year }: { object[year] }</li>
+                key={ i }>{ year }: { object[year] }</li>
             )
           })}
         </ul>
+      </div>
+    )
+  }
+
+  render() {
+    return (
+      <div>
+        { this.schoolCardMap() }
       </div>
     )
   }

@@ -34,7 +34,7 @@ class Main extends Component {
     }
   }
 
-  schoolCardMap = () => {
+  renderSchoolCards = () => {
     const keys = Object.keys(this.props.data);
     return keys.map((key, i) => {
       if (key.includes(this.props.query.toUpperCase())) {
@@ -54,7 +54,7 @@ class Main extends Component {
     return (
       <section className="county-grid">
         <CompareCards cards={this.state.cardsToCompare} />
-        {this.schoolCardMap()}
+        {this.renderSchoolCards()}
       </section>
     )
   }
