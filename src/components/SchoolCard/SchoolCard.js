@@ -15,8 +15,7 @@ class SchoolCard extends Component {
     const object   = this.props.stats;
 
     return (
-      <div
-        className="county-card"
+      <div className="county-card"
         onClick={(e) => this.props.onClick(e)}>
         <h3 className="county-name">{ location }</h3>
         <ul className="county-stats">
