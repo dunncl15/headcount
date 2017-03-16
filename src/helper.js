@@ -26,6 +26,7 @@ export default class DistrictRepository {
   }
 
   findByName(name = '') {
+
     return this.data[name.toUpperCase()];
   }
 

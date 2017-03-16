@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 
-class CompareCards extends Component {
-  constructor(props) {
-    super()
-    this.state = {
-      data: props.data
-    }
-  }
-
-  render() {
+const CompareCards = ({ cards }) => {
+  if(cards.length === 0 || !cards){
     return (
       <div>
-
+        no cards.
       </div>
     )
+  } else {
+    console.log(cards)
   }
+  return (
+    <div>
+
+    </div>
+  )
 }
+
 
 
 export default CompareCards;
