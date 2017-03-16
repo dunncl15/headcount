@@ -24,13 +24,15 @@ class SchoolCard extends Component {
               return (
                 <li
                   className="redStat"
-                  key={ i }>{ year }: { object[year] }</li>
+                  key={ i }>{ year }: <span className="data">{ object[year] }</span>
+                </li>
               )
             }
             return (
               <li
                 className="stat"
-                key={i}>{ year }: { object[year] }</li>
+                key={i}>{ year }: <span className="data">{ object[year] }</span>
+              </li>
             )
           })}
         </ul>
@@ -38,7 +40,5 @@ class SchoolCard extends Component {
     )
   }
 }
-
-
 
 export default SchoolCard;

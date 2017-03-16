@@ -5,26 +5,45 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid;
-  border-radius: 5px;
-}
-.county-card.selected {
-  color: red;
+  background-color: #fefefe;
+  border-radius: 10px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  color: #9a9a9a;
 }
 
 .county-card.selected {
-  border: 3px solid blue;
+  border: 3px solid #247BA0;
 }
 
 .county-name {
   text-align: center;
-  padding: 0 10px;
+  width: 100%;
+  padding: 15px 0;
+  margin: 0;
+  background-color: #aaa;
+  color: #f7f7f7;
 }
 
 .county-stats {
   list-style: none;
   padding: 0;
+  width: 30%;
 }
+
+.county-stats li {
+  border-bottom: 1px solid #f7f7f7;
+  padding: 2px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.county-stats li > * {
+  margin: 0 5px;
+}
+
+
+
 
 .redStat {
   font-weight: 900;
