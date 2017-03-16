@@ -16,6 +16,3 @@ describe.skip('testing Main component', () => {
     expect(wrapper.find('SchoolCard')).to.have.length(1);
   })
 })
-
-
-

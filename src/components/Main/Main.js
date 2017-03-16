@@ -22,6 +22,7 @@ class Main extends Component {
     const card     = e.target;
     const title    = card.querySelector('.county-name');
     const titleVal = title.innerText;
+    console.log(titleVal);
     const object   = this.state.findByName(titleVal);
     const temp     = this.state.cardsToCompare;
     temp.push(object);

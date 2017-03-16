@@ -2,10 +2,11 @@
   display: block;
   width: 75%;
   margin: 30px auto 0 auto;
-  padding: 10px 5px;
+  padding: 10px;
   border-style: none;
-  border: 10px solid #333;
+  border: 10px solid #F7F7F7;
   border-radius: 5px;
-  font-size: 16px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+  font-size: 20px;
   outline: none;
 }
