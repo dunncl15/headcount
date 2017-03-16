@@ -9,8 +9,8 @@ class SchoolCard extends Component {
     }
   }
 
-  render() {
-    const keys     = Object.keys(this.props.stats);
+  schoolCardMap = () => {
+    const keys     = Object.keys(this.props.stats)
     const location = this.props.location;
     const object   = this.props.stats;
 
@@ -36,6 +36,14 @@ class SchoolCard extends Component {
             )
           })}
         </ul>
+      </div>
+    )
+  }
+
+  render() {
+    return (
+      <div>
+        { this.schoolCardMap() }
       </div>
     )
   }

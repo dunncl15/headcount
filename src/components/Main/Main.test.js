@@ -9,7 +9,7 @@ describe.skip('testing Main component', () => {
   it('Main should render without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<Main />, div);
-  })
+  })  
 
   it('Main should contain a component called SchoolCard', () => {
     const wrapper = shallow( <Main /> )

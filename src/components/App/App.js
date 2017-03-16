@@ -28,11 +28,11 @@ class App extends Component {
         <header>
           <h1 className="app-title">Welcome To Headcount 2.0</h1>
           <Search
-            onChange={this.handleChange.bind(this)} />
+            onChange={ this.handleChange.bind(this) } />
         </header>
         <Main
-          data={this.state.data}
-          query={this.state.searchQuery}
+          data={ this.state.data }
+          query={ this.state.searchQuery }
           />
       </section>
     );

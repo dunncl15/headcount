@@ -1,10 +1,11 @@
-import React, { Component }     from 'react';
+import React, { Component } from 'react';
 import Search               from '../Search/Search';
 import SchoolCard           from '../SchoolCard/SchoolCard';
 import CompareCards         from '../CompareCards/CompareCards';
 import DistrictRepository   from '../../helper.js';
 import kinderData           from '../../../data/kindergartners_in_full_day_program.js';
 import './Main.css';
+
 const district = new DistrictRepository(kinderData)
 
 class Main extends Component {
@@ -34,24 +35,27 @@ class Main extends Component {
     }
   }
 
-  render() {
+  renderSchoolCards = () => {
     const keys = Object.keys(this.props.data);
+    return keys.map((key, i) => {
+      if (key.includes(this.props.query.toUpperCase())) {
+        return (
+          <SchoolCard
+            location={this.props.data[key].location}
+            stats={this.props.data[key].data}
+            key={i}
+            onClick={this.clickDiv.bind(this)}
+          />
+        )
+      }
+    })
+  }
 
+  render() {
     return (
       <section className="county-grid">
         <CompareCards cards={this.state.cardsToCompare} />
-        {keys.map((key, i) => {
-          if (key.includes(this.props.query.toUpperCase())) {
-            return (
-              <SchoolCard
-                location={this.props.data[key].location}
-                stats={this.props.data[key].data}
-                key={i}
-                onClick={this.clickDiv.bind(this)}
-              />
-            )
-          }
-        })}
+        {this.renderSchoolCards()}
       </section>
     )
   }
