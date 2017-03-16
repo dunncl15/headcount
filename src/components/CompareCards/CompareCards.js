@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './CompareCards.css'
+import React from 'react';
+import './CompareCards.css';
 
 const CompareCards = ({ cards }) => {
   if( !cards || cards.length === 0){
