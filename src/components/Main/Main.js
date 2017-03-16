@@ -34,24 +34,27 @@ class Main extends Component {
     }
   }
 
-  render() {
+  schoolCardMap = () => {
     const keys = Object.keys(this.props.data);
+    return keys.map((key, i) => {
+      if (key.includes(this.props.query.toUpperCase())) {
+        return (
+          <SchoolCard
+            location={this.props.data[key].location}
+            stats={this.props.data[key].data}
+            key={i}
+            onClick={this.clickDiv.bind(this)}
+          />
+        )
+      }
+    })
+  }
 
+  render() {
     return (
       <section className="county-grid">
         <CompareCards cards={this.state.cardsToCompare} />
-        {keys.map((key, i) => {
-          if (key.includes(this.props.query.toUpperCase())) {
-            return (
-              <SchoolCard
-                location={this.props.data[key].location}
-                stats={this.props.data[key].data}
-                key={i}
-                onClick={this.clickDiv.bind(this)}
-              />
-            )
-          }
-        })}
+        {this.schoolCardMap()}
       </section>
     )
   }

@@ -5,7 +5,6 @@ const CompareCards = ({ cards }) => {
   if(cards.length === 0 || !cards){
     return (
       <div>
-        no cards.
       </div>
     )
   } else {
