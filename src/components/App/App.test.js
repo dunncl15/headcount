@@ -24,12 +24,11 @@ describe('testing App component', () => {
     expect(wrapper.find('Main')).to.have.length(1)
   })
 
-  it('Main should receive props of data and query', () => {
+  it('Main should receive props of query', () => {
     const wrapper = shallow ( <App />)
     const main    = wrapper.find('Main')
 
     expect(main).to.have.length(1)
-    expect(main.props().data).to.be.a('object')
     expect(main.props().query).to.be.a('string')
   })
 
@@ -45,13 +44,6 @@ describe('testing App component', () => {
 
     expect(search).to.have.length(1)
     expect(search.props().onChange).to.be.a('function')
-  })
-
-  it('App should have a default state data that is an object ', () => {
-    const wrapper        = shallow( <App /> );
-    const stateOfWrapper = wrapper.state();
-
-    expect(stateOfWrapper.data).to.be.a('object')
   })
 
   it('App should have a default state searchQuery that is an empty string ', () => {

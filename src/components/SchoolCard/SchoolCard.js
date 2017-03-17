@@ -17,7 +17,7 @@ class SchoolCard extends Component {
 
     return (
       <div className="county-card"
-        onClick={(e) => this.props.onClick(e)}>
+        onClick={ (e) => this.props.handleClick(e, location) }>
         <h3 className="county-name">{ location }</h3>
         <ul className="county-stats">
           { keys.map((year, i) => {

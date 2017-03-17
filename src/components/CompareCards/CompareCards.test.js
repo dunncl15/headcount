@@ -38,7 +38,7 @@ describe('testing CompareCards component', () => {
     }
   ]
 
-    const wrapper = shallow( <CompareCards cards={card}/> )
+    const wrapper = shallow( <CompareCards cards={ card }/> )
     const props   = wrapper.props()
     expect(wrapper.find('.compare-cards').length).to.equal(1)
     expect(wrapper.find('.county-card.selected').length).to.equal(2)
