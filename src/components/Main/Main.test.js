@@ -5,7 +5,7 @@ import { expect, assert } from 'chai';
 import Main               from './Main';
 import SchoolCard         from '../SchoolCard/SchoolCard';
 
-describe.skip('testing Main component', () => {
+describe('testing Main component', () => {
 
   it('main should have a default state that contains a data object, ', () => {
     const data = {

@@ -2,7 +2,7 @@ export default class DistrictRepository {
   constructor(data) {
     this.data = this.removeDuplicates(data);
   }
-  
+
   removeDuplicates(data) {
     this.sanitizeData(data);
     let mapped = data.map(obj => {
@@ -13,14 +13,12 @@ export default class DistrictRepository {
       if (!acc[val.Location]) {
         acc[val.Location] = { locationData: [],
                               location: val.Location,
-                              data: {[val.TimeFrame]: this.roundData(val.Data) }
+                              data: { [val.TimeFrame]: this.roundData(val.Data) }
                             };
       } else {
         acc[val.Location].data[val.TimeFrame] = this.roundData(val.Data);
       }
-
       acc[val.Location].locationData.push(val);
-
       return acc;
     }, {});
   }
