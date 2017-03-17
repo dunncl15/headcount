@@ -8,7 +8,7 @@ import SchoolCard         from './SchoolCard';
 describe('testing SchoolCard component', () => {
 
   it('SchoolCard should render', () => {
-    const data = {2004: 0, 2005: 0.006, 2006: 0, 2007: 0, 2008: 0, 2009: 1, 2010: 1, 2011: 1, 2012: 1, 2013: 1, 2014: 1}
+    const data = { 2004: 0, 2005: 0.006, 2006: 0, 2007: 0, 2008: 0, 2009: 1, 2010: 1, 2011: 1, 2012: 1, 2013: 1, 2014: 1 }
 
     const wrapper = shallow( <SchoolCard stats={ data } /> )
     expect(wrapper.find('ul').length).toEqual(1)
@@ -39,9 +39,6 @@ describe('testing SchoolCard component', () => {
 
     let state = wrapper.state().cardsToCompare = [card]
 
-
-    console.log(state);
-
     const divToClick = wrapper.find('.county-card')
     console.log(wrapper.state().cardsToCompare);
     divToClick.simulate('click')
@@ -49,7 +46,7 @@ describe('testing SchoolCard component', () => {
     expect(Main.prototype.clickDiv.calledOnce).to.equal(true)
   })
 
-  it('fires clickDiv function and updates state', () => {
+  it.only('fires clickDiv function and updates state', () => {
     const mockedSubmit = jest.fn();
 
     const data         = {
@@ -66,7 +63,7 @@ describe('testing SchoolCard component', () => {
                           2014: 1
                         }
 
-    const wrapper    = mount( <SchoolCard stats={ data } onClick={ mockedSubmit }/> )
+    const wrapper    = mount( <SchoolCard stats={ data } handleClick={ mockedSubmit }/> )
     const divToClick = wrapper.find('.county-card')
     divToClick.simulate('click')
 

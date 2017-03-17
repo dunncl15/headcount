@@ -19,11 +19,9 @@ class Main extends Component {
     }
   }
 
-  clickDiv(e){
-    const card     = e.target;
-    const title    = card.querySelector('.county-name');
-    const titleVal = title.innerText;
-    const object   = this.state.findByName(titleVal);
+  clickDiv(e, location){
+    const card     = e.target
+    const object   = this.state.findByName(location);
     const temp     = this.state.cardsToCompare;
     temp.push(object);
 
@@ -36,15 +34,15 @@ class Main extends Component {
   }
 
   renderSchoolCards = () => {
-    const keys = Object.keys(this.props.data);
+    const keys = Object.keys(this.state.data);
     return keys.map((key, i) => {
       if (key.includes(this.props.query.toUpperCase())) {
         return (
           <SchoolCard
-            location={ this.props.data[key].location }
-            stats={ this.props.data[key].data }
+            location={ this.state.data[key].location }
+            stats={ this.state.data[key].data }
             key={ i }
-            onClick={ this.clickDiv.bind(this) }
+            handleClick={ this.clickDiv.bind(this) }
           />
         )
       }
@@ -62,8 +60,8 @@ class Main extends Component {
       <section className="county-grid">
         <CompareCards
           cards={ this.state.cardsToCompare }
-          resetCompare={this.resetState.bind(this)} />
-        {this.renderSchoolCards()}
+          resetCompare={ this.resetState.bind(this) } />
+        { this.renderSchoolCards() }
       </section>
     )
   }
