@@ -13,6 +13,7 @@ class Main extends Component {
     super()
     this.state = {
       data: district.data,
+      functions: district,
       findByName: district.findByName,
       cardsToCompare: []
     }
@@ -50,10 +51,18 @@ class Main extends Component {
     })
   }
 
+  resetState() {
+    this.setState({
+      cardsToCompare: []
+    })
+  }
+
   render() {
     return (
       <section className="county-grid">
-        <CompareCards cards={this.state.cardsToCompare} />
+        <CompareCards
+          cards={ this.state.cardsToCompare }
+          resetCompare={this.resetState.bind(this)} />
         {this.renderSchoolCards()}
       </section>
     )

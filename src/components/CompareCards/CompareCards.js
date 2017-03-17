@@ -1,7 +1,8 @@
 import React from 'react';
+import Comparison from '../Comparison/Comparison'
 import './CompareCards.css';
 
-const CompareCards = ({ cards }) => {
+const CompareCards = ({ cards, resetCompare }) => {
   if( !cards || cards.length === 0){
     return (
       <div>
@@ -10,6 +11,7 @@ const CompareCards = ({ cards }) => {
   }
 
   const dataKeys = Object.keys(cards[0].data);
+
   return (
     <section className="compare-cards">
       {cards.map((card, i) => {
@@ -26,6 +28,8 @@ const CompareCards = ({ cards }) => {
           </div>
         )
       })}
+      <Comparison cards={ cards } />
+      <buttton onClick={ () => resetCompare() }>CLEAR COMPARISON</buttton>
     </section>
   )
 

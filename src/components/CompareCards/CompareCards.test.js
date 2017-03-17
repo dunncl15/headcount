@@ -4,8 +4,8 @@ import { shallow, mount } from 'enzyme';
 import { expect, assert } from 'chai';
 import CompareCards       from './CompareCards';
 import Main               from '../Main/Main';
-import DistrictRepository   from '../../helper.js';
-import kinderData           from '../../../data/kindergartners_in_full_day_program.js';
+import DistrictRepository from '../../helper.js';
+import kinderData         from '../../../data/kindergartners_in_full_day_program.js';
 
 describe.skip('testing CompareCards component', () => {
   it('compare cards should be passed an empty array as a default prop', () => {
