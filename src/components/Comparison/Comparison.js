@@ -2,6 +2,7 @@ import React              from 'react';
 import DistrictRepository from '../../helper.js';
 import kinderData         from '../../../data/kindergartners_in_full_day_program.js';
 import SchoolCard         from '../SchoolCard/SchoolCard';
+import './Comparison.css';
 
 const district = new DistrictRepository(kinderData)
 
@@ -27,7 +28,7 @@ const Comparison = ({ cards }) => {
       })
     }
     return (
-      <div className='county-card'>
+      <div className='county-card comparison'>
         <h3>COMPARISON</h3>
         { renderComparison() }
       </div>
@@ -39,4 +40,4 @@ const Comparison = ({ cards }) => {
 
 }
 
-export default Comparison
+export default Comparison;

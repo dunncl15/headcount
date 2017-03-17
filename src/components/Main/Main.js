@@ -60,8 +60,10 @@ class Main extends Component {
       <section className="county-grid">
         <CompareCards
           cards={ this.state.cardsToCompare }
-          resetCompare={ this.resetState.bind(this) } />
-        { this.renderSchoolCards() }
+          resetCompare={this.resetState.bind(this)} />
+        <div className="card-grid">
+        {this.renderSchoolCards()}
+        </div>
       </section>
     )
   }

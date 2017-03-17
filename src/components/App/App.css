@@ -13,6 +13,16 @@
 
 .app-title {
   margin: 0;
-  text-align: center;
   color: #fff;
+  font-family: 'Sansita', sans-serif;
+  font-size: 220%;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+
+  .app-title {
+    margin: 0 0 25px 0;
+    font-size: 300%;
+  }
 }
