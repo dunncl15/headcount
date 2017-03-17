@@ -7,7 +7,7 @@ import Main               from '../Main/Main';
 import DistrictRepository   from '../../helper.js';
 import kinderData           from '../../../data/kindergartners_in_full_day_program.js';
 
-describe('testing CompareCards component', () => {
+describe.skip('testing CompareCards component', () => {
   it('compare cards should be passed an empty array as a default prop', () => {
     const wrapper = shallow( <CompareCards  /> )
     const props   = wrapper.props()
@@ -42,15 +42,6 @@ describe('testing CompareCards component', () => {
     const props   = wrapper.props()
     expect(wrapper.find('.compare-cards').length).to.equal(1)
     expect(wrapper.find('.county-card.selected').length).to.equal(2)
-  })
-
-  it('should not render compareCards if not passed cards to compare', () => {
-    const wrapper = shallow ( <CompareCards />)
-
-    expect(wrapper.find('.compare-cards')).length.to.be(0);
-    expect(wrapper.find('.selected')).length.to.be(0);
-    expect(wrapper.contains( <div></div>)).to.equal(true)
-    console.log(wrapper.debug());
   })
 
   it('should not render compareCards if not passed cards to compare', () => {
