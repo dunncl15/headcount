@@ -17,9 +17,9 @@ const CompareCards = ({ cards, resetCompare }) => {
         <div className="county-card selected" key={ i }>
           <h3>{ card.location }</h3>
           <ul className="county-stats">
-            {dataKeys.map((year, i) => {
+            { dataKeys.map((year, i) => {
               return (
-                <li key={i}>{ year }: { card.data[year] }</li>
+                <li key={ i }>{ year }: { card.data[year] }</li>
               )
             })}
           </ul>
