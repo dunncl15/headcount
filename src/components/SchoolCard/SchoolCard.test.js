@@ -1,10 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React              from 'react';
+import ReactDOM           from 'react-dom';
 import { shallow, mount } from 'enzyme';
-import sinon           from 'sinon';
-
-import Main from '../Main/Main'
-import SchoolCard from './SchoolCard';
+import sinon              from 'sinon';
+import Main               from '../Main/Main'
+import SchoolCard         from './SchoolCard';
 
 describe('testing SchoolCard component', () => {
 

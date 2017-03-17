@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React              from 'react';
+import ReactDOM           from 'react-dom';
 import { shallow, mount } from 'enzyme';
 import { expect, assert } from 'chai';
-import App from '../App/App';
-import SchoolCard from '../SchoolCard/SchoolCard';
-import Search from './Search';
+import App                from '../App/App';
+import SchoolCard         from '../SchoolCard/SchoolCard';
+import Search             from './Search';
 
 describe('search component tests', () => {
   it('should have a className of search-field', () => {
@@ -14,7 +14,7 @@ describe('search component tests', () => {
 
   it('should update value on keypress', () => {
     const wrapper = mount(<App />);
-    const input = wrapper.find('input');
+    const input   = wrapper.find('input');
 
     input.simulate('change', { target: { value: 'COLORADO' } });
     expect(wrapper.state().searchQuery).to.equal('COLORADO');
@@ -22,8 +22,8 @@ describe('search component tests', () => {
 
   it('should render the school cards that match searchQuery', () => {
     const wrapper = mount(<App />);
-    const main = wrapper.find('.county-grid');
-    const input = wrapper.find('input');
+    const main    = wrapper.find('.county-grid');
+    const input   = wrapper.find('input');
     input.simulate('change', { target: { value: 'COLORADO' } });
 
     expect(main.containsAllMatchingElements([

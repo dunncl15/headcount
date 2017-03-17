@@ -41,10 +41,10 @@ class Main extends Component {
       if (key.includes(this.props.query.toUpperCase())) {
         return (
           <SchoolCard
-            location={this.props.data[key].location}
-            stats={this.props.data[key].data}
-            key={i}
-            onClick={this.clickDiv.bind(this)}
+            location={ this.props.data[key].location }
+            stats={ this.props.data[key].data }
+            key={ i }
+            onClick={ this.clickDiv.bind(this) }
           />
         )
       }
