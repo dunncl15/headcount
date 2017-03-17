@@ -89,8 +89,8 @@ describe.skip('testing Main component', () => {
     }}
 
     const wrapper    = shallow(<Main
-                                data={data}
-                                query={'COLORADO'}
+                                data={ data }
+                                query={ 'COLORADO' }
                                 />)
     const schoolcard = wrapper.find('SchoolCard')
 

@@ -2,7 +2,7 @@ export default class DistrictRepository {
   constructor(data) {
     this.data = this.removeDuplicates(data);
   }
-
+  
   removeDuplicates(data) {
     this.sanitizeData(data);
     let mapped = data.map(obj => {
@@ -62,18 +62,25 @@ export default class DistrictRepository {
 
   findAverage(location) {
     const object = this.findByName(location);
-    const years = Object.keys(object.data);
-    const sum = years.reduce((acc, year) => {
+    const years  = Object.keys(object.data);
+    const sum    = years.reduce((acc, year) => {
       return acc + object.data[year];
     }, 0);
     return this.roundData(sum / years.length);
   }
 
   compareDistrictAverages(location1, location2) {
-    const firstAverage = this.findAverage(location1);
+    const firstAverage  = this.findAverage(location1);
     const secondAverage = this.findAverage(location2);
-    const compared = firstAverage < secondAverage ? this.roundData(firstAverage / secondAverage) : this.roundData(secondAverage / firstAverage);
-    return Object.assign({}, {[location1.toUpperCase()]: firstAverage, [location2.toUpperCase()]: secondAverage, compared: compared});
+    const compared      = firstAverage < secondAverage ? this.roundData(firstAverage / secondAverage) : this.roundData(secondAverage / firstAverage);
+    return Object.assign({}, {
+      [location1.toUpperCase()]: firstAverage,
+      [location2.toUpperCase()]: secondAverage,
+      compared: compared
+    });
   }
-
 }
+
+
+
+
