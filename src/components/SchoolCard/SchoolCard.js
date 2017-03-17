@@ -10,6 +10,7 @@ class SchoolCard extends Component {
   }
 
   schoolCardMap = () => {
+    
     const keys     = Object.keys(this.props.stats)
     const location = this.props.location;
     const object   = this.props.stats;
