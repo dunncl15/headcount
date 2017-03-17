@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Search               from '../Search/Search';
 import SchoolCard           from '../SchoolCard/SchoolCard';
 import CompareCards         from '../CompareCards/CompareCards';
 import DistrictRepository   from '../../helper.js';
