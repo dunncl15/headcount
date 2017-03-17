@@ -16,37 +16,7 @@ describe('testing SchoolCard component', () => {
     expect(wrapper.find('li').length).toEqual(11)
   })
 
-  it.skip('SchoolCards should be clickable and change class on click', () => {
-
-    const data = {COLORADO: {
-      data: {
-        2004: 0
-      },
-      location: 'COLORADO',
-      locationData: [
-        {}
-      ]
-    }}
-
-    const card = {
-      data: {2004: 'suh'},
-      location: 'string'
-    }
-
-    sinon.spy(Main.prototype, 'clickDiv')
-
-    const wrapper = mount( <Main data={ data } query={ 'COLORADO' } /> )
-
-    let state = wrapper.state().cardsToCompare = [card]
-
-    const divToClick = wrapper.find('.county-card')
-    console.log(wrapper.state().cardsToCompare);
-    divToClick.simulate('click')
-
-    expect(Main.prototype.clickDiv.calledOnce).to.equal(true)
-  })
-
-  it.only('fires clickDiv function and updates state', () => {
+  it('fires clickDiv function and updates state', () => {
     const mockedSubmit = jest.fn();
 
     const data         = {
@@ -64,7 +34,7 @@ describe('testing SchoolCard component', () => {
                         }
 
     const wrapper    = mount( <SchoolCard stats={ data } handleClick={ mockedSubmit }/> )
-    const divToClick = wrapper.find('.county-card')
+    const divToClick = wrapper.find('.county-card').last()
     divToClick.simulate('click')
 
     expect(mockedSubmit).toHaveBeenCalledTimes(1)
