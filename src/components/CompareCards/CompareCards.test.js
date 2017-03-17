@@ -7,7 +7,7 @@ import Main               from '../Main/Main';
 import DistrictRepository from '../../helper.js';
 import kinderData         from '../../../data/kindergartners_in_full_day_program.js';
 
-describe.skip('testing CompareCards component', () => {
+describe('testing CompareCards component', () => {
   it('compare cards should be passed an empty array as a default prop', () => {
     const wrapper = shallow( <CompareCards  /> )
     const props   = wrapper.props()
