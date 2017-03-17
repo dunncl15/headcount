@@ -18,8 +18,13 @@ const CompareCards = ({ cards, resetCompare }) => {
           <h3>{ card.location }</h3>
           <ul className="county-stats">
             {dataKeys.map((year, i) => {
+              if (cards[0].data[year] > 0.5) {
+                return (
+                  <li className="stat redStat" key={i}>{ year }: { card.data[year] }</li>
+                )
+              }
               return (
-                <li key={i}>{ year }: { card.data[year] }</li>
+                <li className="stat" key={i}>{ year }: { card.data[year] }</li>
               )
             })}
           </ul>
@@ -30,9 +35,11 @@ const CompareCards = ({ cards, resetCompare }) => {
 
   return (
     <section className="compare-cards">
-      { renderCards() }
+      <div className="compare-wrap">
       <Comparison cards={ cards } />
-      <buttton onClick={ () => resetCompare() }>CLEAR COMPARISON</buttton>
+      { renderCards() }
+      </div>
+      <button className="clear-btn" onClick={ () => resetCompare() }>CLEAR COMPARISON</button>
     </section>
   )
 

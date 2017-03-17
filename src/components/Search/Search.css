@@ -1,12 +1,19 @@
 .search-field {
   display: block;
-  width: 75%;
+  width: 85%;
   margin: 30px auto 0 auto;
   padding: 10px;
   border-style: none;
   border: 10px solid #F7F7F7;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+  color: #5c5c5c;
   font-size: 20px;
   outline: none;
+}
+
+@media screen  and (min-width: 768px) {
+  .search-field {
+    width: 77%;
+  }
 }

@@ -78,7 +78,3 @@ export default class DistrictRepository {
     });
   }
 }
-
-
-
-

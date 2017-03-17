@@ -43,7 +43,7 @@ class SchoolCard extends Component {
 
   render() {
     return (
-      <div>
+      <div className="county-card-wrap">
         { this.schoolCardMap() }
       </div>
     )

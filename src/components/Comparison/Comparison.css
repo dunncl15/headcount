@@ -1,0 +1,21 @@
+
+.county-card.comparison {
+  border: 10px solid #ab4c4c;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+  color: #777;
+}
+
+@media screen and (min-width: 675px) {
+
+  .county-card.comparison {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 75px;
+    bottom: 75px;
+    margin: auto;
+    width: 30%;
+    padding: 0 15px;
+  }
+
+}

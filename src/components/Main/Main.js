@@ -63,7 +63,9 @@ class Main extends Component {
         <CompareCards
           cards={ this.state.cardsToCompare }
           resetCompare={this.resetState.bind(this)} />
+        <div className="card-grid">
         {this.renderSchoolCards()}
+        </div>
       </section>
     )
   }
