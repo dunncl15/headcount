@@ -1,7 +1,6 @@
 import React              from 'react';
 import DistrictRepository from '../../helper.js';
 import kinderData         from '../../../data/kindergartners_in_full_day_program.js';
-import SchoolCard         from '../SchoolCard/SchoolCard';
 import './Comparison.css';
 
 const district = new DistrictRepository(kinderData)
